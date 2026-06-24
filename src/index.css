@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Trajan Pro';
+  src: url('/fonts/TrajanPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Trajan Pro';
+  src: url('/fonts/TrajanPro-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --brand-blue: 197 100% 15%;
+    --brand-limestone: 48 24% 92%;
+
+    --background: 48 24% 92%;
+    --foreground: 197 100% 15%;
+
+    --card: 48 24% 92%;
+    --card-foreground: 197 100% 15%;
+
+    --popover: 48 24% 92%;
+    --popover-foreground: 197 100% 15%;
+
+    --primary: 197 100% 15%;
+    --primary-foreground: 48 24% 92%;
+
+    --secondary: 197 100% 15%;
+    --secondary-foreground: 48 24% 92%;
+
+    --muted: 48 15% 86%;
+    --muted-foreground: 197 40% 40%;
+
+    --accent: 197 100% 15%;
+    --accent-foreground: 48 24% 92%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 197 100% 15%;
+    --input: 197 30% 70%;
+    --ring: 197 100% 15%;
+
+    --radius: 0px;
+
+    --sidebar-background: 197 100% 15%;
+    --sidebar-foreground: 48 24% 92%;
+    --sidebar-primary: 48 24% 92%;
+    --sidebar-primary-foreground: 197 100% 15%;
+    --sidebar-accent: 197 80% 20%;
+    --sidebar-accent-foreground: 48 24% 92%;
+    --sidebar-border: 197 60% 25%;
+    --sidebar-ring: 197 100% 15%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border/20;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-outline-gold {
+    @apply border border-primary/30 text-primary bg-transparent px-8 py-3 uppercase tracking-[0.15em] text-sm font-body font-medium transition-all duration-300;
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+  .btn-outline-gold:hover {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .eyebrow {
+    @apply uppercase tracking-[0.15em] text-xs font-body font-medium text-primary;
+  }
+
+  .section-spacing {
+    @apply py-24 md:py-32;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .container-main {
+    @apply max-w-7xl mx-auto px-6;
+  }
+}
